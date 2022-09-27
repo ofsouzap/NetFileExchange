@@ -1,4 +1,4 @@
-from typing import Callable;
+from typing import Callable, Union, Optional;
 from socket import socket as Socket;
 from struct import pack, unpack;
 from pathlib import Path;
@@ -76,7 +76,7 @@ def recv_file(cli: Socket,
 
 def recv_dir(cli: Socket,
     parent_path: Path,
-    on_file_received: Callable[[Path], None] | None = None) -> None:
+    on_file_received: Optional[Callable[[Path], None]] = None) -> None:
 
     if not parent_path.is_dir():
         raise Exception("Parent path provided isn't directory.");

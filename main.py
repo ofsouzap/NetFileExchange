@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from typing import List, Tuple;
+from typing import List, Tuple, Union, Optional;
 from socket import socket as Socket;
 import socket;
 from struct import pack, unpack;
